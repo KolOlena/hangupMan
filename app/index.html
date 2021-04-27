@@ -1,0 +1,49 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>My simple game</title>
+    <link rel="stylesheet" href="app.css">
+    <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body ng-app="mySimpleApp" ng-controller="GameController" class="body">
+<div class="grid-container">
+    <div class="h">
+        <h1>Hangman APP</h1>
+        <div class="guess-left">Guesses Left : {{guesses}}</div>
+        <div>You have to guess: {{displayWord.toUpperCase()}}</div>
+    </div>
+
+    <div class="main-body">
+        <div class="e">
+            Your incorrect guesses:
+            <div class="letter incorrect">
+                <span ng-repeat="letter in inncorrectLetterChosen">{{letter.toUpperCase()}}</span>
+            </div>
+        </div>
+        <div class="w">
+            <input type="text" name="guess" ng-model="input.letter" ng-enter="letterChosen()" autoFocus>
+            <div class="button">
+                <button ng-click="letterChosen()">Submit</button>
+            </div>
+        </div>
+
+        <div class="r">
+            Your correct guesses:
+            <div class="letter ">
+                <span class="correct" ng-repeat="letter in correctLetterChosen">{{letter.toUpperCase()}}</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular-route/angular-route.js"></script>
+<script src="app.js"></script>
+<script src="core/version/version.js"></script>
+<script src="core/version/version-directive.js"></script>
+<script src="core/version/interpolate-filter.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
